@@ -10,6 +10,10 @@ class LoginController extends Controller
         return view('login');
     }
     public function loginSubmit(Request $request){
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:12'
+        ]);
         $email = $request->input('email');
         $password = $request->input('password');
         return 'Email : '.$email . 'Password : '.$password;
