@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController; 
@@ -40,3 +41,9 @@ Route::get('/fluent-string', [FluentController::class,'index'])->name('fluents.i
 Route::get('/login',[LoginController::class, 'index'])->name('login.index')->middleware('checkuser');
 
 Route::post('/login',[LoginController::class, 'loginSubmit'])->name('login.submit');
+
+Route::get('/session/get',[SessionController::class, 'getSessionData'])->name('session.get');
+
+Route::get('/session/set',[SessionController::class, 'storeSessionData'])->name('session.store');
+
+Route::get('/session/remove',[SessionController::class, 'deleteSessionData'])->name('session.delete');
