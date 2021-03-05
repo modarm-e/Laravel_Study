@@ -62,3 +62,9 @@ Route::get('/delete-post/{id}',[PostController::class, 'deletePost'])->name('pos
 Route::get('/edit-post/{id}',[PostController::class, 'editPost'])->name('post.edit');
 
 Route::post('/update-post',[PostController::class,'updatePost'])->name('post.update');
+
+Route::get('/inner-join', [PostController::class,'innerJoinClause'])->name('post.innerjoin');
+
+Route::get('/left-join', [PostController::class, 'leftJoinClause'])->name('post.leftjoin');
+
+Route::get('/right-join', [PostController::class, 'rightJoinClause'])->name('post.rightjoin');
