@@ -68,3 +68,5 @@ Route::get('/inner-join', [PostController::class,'innerJoinClause'])->name('post
 Route::get('/left-join', [PostController::class, 'leftJoinClause'])->name('post.leftjoin');
 
 Route::get('/right-join', [PostController::class, 'rightJoinClause'])->name('post.rightjoin');
+
+Route::get('/all-posts',[PostController::class, 'getAllPostsUsingModel'])->name('post.getallpost');
